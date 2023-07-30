@@ -94,11 +94,11 @@ WSGI_APPLICATION = 'discuss.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('POSTGRES_DATABASE'),
-        'USER': env('POSTGRES_USER'),
-        'PASSWORD': env('POSTGRES_PASSWORD'),
-        'HOST': env('POSTGRES_HOST'),
-        'PORT': env('POSTGRES_PORT'),
+        'NAME': env('QOVERY_POSTGRESQL_Z37A24CEB_DEFAULT_DATABASE_NAME'),
+        'USER': env('QOVERY_POSTGRESQL_Z37A24CEB_LOGIN'),
+        'PASSWORD': env('QOVERY_POSTGRESQL_Z37A24CEB_PASSWORD'),
+        'HOST': env('QOVERY_POSTGRESQL_Z37A24CEB_HOST'),
+        'PORT': env('QOVERY_POSTGRESQL_Z37A24CEB_PORT'),
         # 'URL': env('POSTGRES_URL'),
     }
 }
