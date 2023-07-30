@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-%s)!n080dc$pjw2@f0to(z!inxqw3c7ly00)1l!7dtliix*pof'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -101,7 +101,6 @@ DATABASES = {
         'PASSWORD': env('QOVERY_POSTGRESQL_Z37A24CEB_PASSWORD'),
         'HOST': env('QOVERY_POSTGRESQL_Z37A24CEB_HOST'),
         'PORT': env('QOVERY_POSTGRESQL_Z37A24CEB_PORT'),
-        # 'URL': env('POSTGRES_URL'),
     }
 }
 
