@@ -24,7 +24,7 @@ RUN pip install -r requirements.txt
 COPY . .
 
 # Set executable permission for the entrypoint.sh script
-# RUN chmod +x entrypoint.sh
+RUN chmod +x entrypoint.sh
 
 # Expose the port on which your Django app listens
 EXPOSE 8000
