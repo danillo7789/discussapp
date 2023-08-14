@@ -29,9 +29,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(' ')
 
 # CSRF_TRUSTED_ORIGINS = ['https://p8000-zee70f554-zeb6f4a6c-gtw.z5fcbf729.cargo.rocks']
 
