@@ -33,7 +33,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS = ['https://p8000-zee70f554-zeb6f4a6c-gtw.z5fcbf729.cargo.rocks']
+# CSRF_TRUSTED_ORIGINS = ['https://p8000-zee70f554-zeb6f4a6c-gtw.z5fcbf729.cargo.rocks']
 
 
 # Application definition
@@ -97,11 +97,11 @@ WSGI_APPLICATION = 'discuss.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('QOVERY_POSTGRESQL_Z37A24CEB_DEFAULT_DATABASE_NAME'),
-        'USER': env('QOVERY_POSTGRESQL_Z37A24CEB_LOGIN'),
-        'PASSWORD': env('QOVERY_POSTGRESQL_Z37A24CEB_PASSWORD'),
-        'HOST': env('QOVERY_POSTGRESQL_Z37A24CEB_HOST'),
-        'PORT': env('QOVERY_POSTGRESQL_Z37A24CEB_PORT'),
+        'NAME': env('RENDER_DATABASE'),
+        'USER': env('RENDER_USER'),
+        'PASSWORD': env('RENDER_PASSWORD'),
+        'HOST': env('RENDER_HOST'),
+        'PORT': env('RENDER_PORT'),
     }
 }
 
