@@ -21,21 +21,25 @@ def loginUser(request):
     if request.method == 'POST':
         username = request.POST.get('username').lower()
         password = request.POST.get('password')
+
         try:
             user = User.objects.get(username=username)
-        except:
-            messages.error(request, 'User does not exist') 
-        user = authenticate(request, username=username, password=password)
+            user = authenticate(request, username=username, password=password)
 
-        if user is not None:
-            login(request, user)
-            return redirect('home')
-        else:
-            messages.error(request, 'Username or Password does not match')
+            if user is not None and user.check_password(password):
+                login(request, user)
+                return redirect('home')
+            else:
+                messages.error(request, 'Username or password is incorrect.')
+
+        except User.DoesNotExist:
+            messages.error(request, 'User does not exist.')
+
+        except Exception as e:
+            messages.error(request, f'Error occurred while logging in: {str(e)}')
 
     context = {'page': page}
     return render(request, 'base/login_register.html', context)
-
 
 
 def logoutUser(request):
