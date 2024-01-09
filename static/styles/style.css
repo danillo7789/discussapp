@@ -11,7 +11,7 @@
   --color-light-gray: #b2bdbd;
   --color-bg: #252532;
   --color-success: #3eea8b;
-  --color-error: #ea347a;
+  --color-error: #f1504e;
 }
 
 /*========== base styles ==========*/
@@ -58,7 +58,7 @@ img {
 
 .err {
   background-color: var(--color-error);
-  color: #040405;
+  color: #ffffff;
   padding: 5px;
   text-align: center;
 }
