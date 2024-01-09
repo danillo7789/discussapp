@@ -56,6 +56,13 @@ img {
   width: 100%;
 }
 
+.err {
+  background-color: var(--color-error);
+  color: #040405;
+  padding: 5px;
+  text-align: center;
+}
+
 a {
   display: inline-block;
   color: var(--color-main);
