@@ -63,6 +63,10 @@ img {
   text-align: center;
 }
 
+.err ul{
+  list-style: none;
+}
+
 a {
   display: inline-block;
   color: var(--color-main);

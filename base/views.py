@@ -34,7 +34,7 @@ def loginUser(request):
 
         except User.DoesNotExist:
             messages.error(request, 'User does not exist.')
-
+# Put another try on line 24 to complement this exception on line 38
         except Exception as e:
             messages.error(request, f'Error occurred while logging in: {str(e)}')
 
@@ -82,14 +82,14 @@ def home(request):
     return render(request, 'base/home.html', context)
 
 
-#do not allow user to send message without login
 @csrf_protect
 def room(request, pk):
     room = Room.objects.get(id = pk)
     #to get all child properties in a many to one, varible.nameOfChildModel_set.all(), many2many is just .all()
-    room_messages = room.message_set.all() #.order_by('-created')
+    room_messages = room.message_set.all().order_by('-created')
     participants = room.participants.all()
 
+    #do not allow user to send message without login
     if request.method == 'POST' and not request.user.is_authenticated:
         return redirect('login')
 
