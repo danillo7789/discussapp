@@ -4,6 +4,9 @@ environ.Env.read_env()
 
 import os
 
+# from pymongo.mongo_client import MongoClient
+# from pymongo.server_api import ServerApi
+
 #pip freeze > requirements.txt
 """
 Django settings for discuss project.
@@ -35,7 +38,7 @@ DEBUG = env('DEBUG')
 ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(' ')
 
 # CSRF_TRUSTED_ORIGINS = ['https://p8000-zee70f554-zeb6f4a6c-gtw.z5fcbf729.cargo.rocks']
-CSRF_TRUSTED_ORIGINS = ['https://discussitapp.onrender.com']
+CSRF_TRUSTED_ORIGINS = ['https://discussitapp.onrender.com', 'http://localhost', 'http://127.0.0.1']
 
 
 # Application definition
@@ -89,23 +92,41 @@ WSGI_APPLICATION = 'discuss.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('AIVEN_DB_NAME'),
-        'USER': env('AIVEN_DB_USER'),
-        'PASSWORD': env('AIVEN_DB_PASSWORD'),
-        'HOST': env('AIVEN_DB_HOST'),
-        'PORT': env('AIVEN_DB_PORT'),
+        'NAME': env('DB_NAME'),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
+        'HOST': env('DB_HOST'),
+        'PORT': env('DB_PORT'),
     }
 }
+
+
+# MONGODB_URI = env('MONGO_URI')
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',  # Use djongo for MongoDB
+#         'NAME': env('DB_NAME'),
+#         'CLIENT': {
+#             'host': MONGODB_URI,
+#             'username': env('DB_USER'),
+#             'password': env('DB_PASSWORD'),
+#         }
+#     }
+# }
+
+# # Check MongoDB connection
+# try:
+#     client = MongoClient(MONGODB_URI, server_api=ServerApi('1'))
+#     client.admin.command('ping')  # Send a ping to confirm connection
+#     print("Successfully connected to MongoDB.")
+# except Exception as e:
+#     print(f"Failed to connect to MongoDB: {str(e)}")
+
 
 
 # Password validation
