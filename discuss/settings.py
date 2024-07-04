@@ -34,7 +34,7 @@ DEBUG = env('DEBUG')
 ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(' ')
 
 # CSRF_TRUSTED_ORIGINS = ['https://p8000-zee70f554-zeb6f4a6c-gtw.z5fcbf729.cargo.rocks']
-CSRF_TRUSTED_ORIGINS = ['https://discussitapp.onrender.com']
+CSRF_TRUSTED_ORIGINS = ['https://discussitapp.onrender.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -98,11 +98,11 @@ WSGI_APPLICATION = 'discuss.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('RENDER_DATABASE'),
-        'USER': env('RENDER_USER'),
-        'PASSWORD': env('RENDER_PASSWORD'),
-        'HOST': env('RENDER_HOST'),
-        'PORT': env('RENDER_PORT'),
+        'NAME': env('AIVEN_DB_NAME'),
+        'USER': env('AIVEN_DB_USER'),
+        'PASSWORD': env('AIVEN_DB_PASSWORD'),
+        'HOST': env('AIVEN_DB_HOST'),
+        'PORT': env('AIVEN_DB_PORT'),
     }
 }
 
