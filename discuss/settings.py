@@ -34,7 +34,7 @@ DEBUG = env('DEBUG')
 ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(' ')
 
 # CSRF_TRUSTED_ORIGINS = ['https://p8000-zee70f554-zeb6f4a6c-gtw.z5fcbf729.cargo.rocks']
-CSRF_TRUSTED_ORIGINS = ['https://discussitapp.onrender.com', '127.0.0.1', 'localhost']
+CSRF_TRUSTED_ORIGINS = ['https://discussitapp.onrender.com', 'http://127.0.0.1', 'http://localhost']
 
 
 # Application definition
