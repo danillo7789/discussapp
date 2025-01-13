@@ -111,6 +111,7 @@ DATABASES = {
 #     'default': {
 #         'ENGINE': 'djongo',  # Use djongo for MongoDB
 #         'NAME': env('DB_NAME'),
+#         'ENFORCE_SCHEMA': False,
 #         'CLIENT': {
 #             'host': MONGODB_URI,
 #             'username': env('DB_USER'),
@@ -119,7 +120,7 @@ DATABASES = {
 #     }
 # }
 
-# # Check MongoDB connection
+# Check MongoDB connection
 # try:
 #     client = MongoClient(MONGODB_URI, server_api=ServerApi('1'))
 #     client.admin.command('ping')  # Send a ping to confirm connection
