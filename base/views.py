@@ -30,7 +30,7 @@ def loginUser(request):
                 login(request, user)
                 return redirect('home')
             else:
-                messages.error(request, 'Username or password is incorrect.')
+                messages.error(request, 'Invalid details.')
 
         except User.DoesNotExist:
             messages.error(request, 'User does not exist.')
